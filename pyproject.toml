@@ -1,0 +1,22 @@
+[project]
+name = "eval-gate"
+version = "0.1.0"
+description = "CI gate that compares two LLM-agent eval runs and fails on regressions, lost cases and new flakiness."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+eval-gate = "eval_gate.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["eval_gate"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
